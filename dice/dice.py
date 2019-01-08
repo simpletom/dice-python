@@ -83,13 +83,9 @@ class Dice:
 
 
     def show_average_roll(self):
-        average = 0
         rolls = len(self.history)
 
-        if rolls != 0:
-            average = sum(self.history) / rolls
-
-        print("Average of " + str(rolls) + " rolls: " + str(average) + "\n")
+        print("Average of " + str(rolls) + " rolls: " + str(self.average_roll) + "\n")
 
 
     def last_roll(self):
@@ -98,6 +94,14 @@ class Dice:
         except IndexError:
             return 0
 
+    def average_roll(self):
+        average = 0
+        rolls = len(self.history)
+
+        if rolls != 0:
+            average = sum(self.history) / rolls
+
+        return average
 
     def show_last_roll(self):
         print(self.last_roll() +"\n")
