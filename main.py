@@ -1,4 +1,4 @@
-from dice import dice
+from dice.dice import Dice
 import getpass
 
 
@@ -19,6 +19,7 @@ def exit_program():
 
 def main_loop():
     while True:
+        dice = Dice()
         try:
             user_input = int(getpass.getpass("Enter command (1 for help):"))
 
